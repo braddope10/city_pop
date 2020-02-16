@@ -4,7 +4,7 @@ class CityPop::City
 
     @@all = []
 
-    def initialize(name)
+    def initialize(name, population)
         @name = name
         @population = population
         save
@@ -14,8 +14,10 @@ class CityPop::City
         @@all << self
     end
 
-    def self.find_by_index(index)
-        @@all[index]
-    end
-
 end
+
+    # def self.find_by_index(index)
+    #     @@all[index]
+    # end
+
+
