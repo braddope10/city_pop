@@ -3,7 +3,7 @@
 class CityPop::CLI
     
     def call
-        puts "Here is a list of the largest US cities in terms of population in order:"
+        puts "Here is a list of the most populated cities in Nevada in order:"
         list_cities
         menu
         goodbye
@@ -11,9 +11,9 @@ class CityPop::CLI
 
     def list_cities
         #get city name
-        @cities = CityPop::City.all
+        @cities = CityPop::Scaper.all
         @cities.each.with_index(1) do |city, i|
-            puts "#{i}. #{city.name} - #{city.nickname}"
+            puts "#{i}. #{city.name}"
         end
     end
 
@@ -27,7 +27,7 @@ class CityPop::CLI
 
             if input.to_i > 0
                 the_pop = @cities[input.to_i-1]
-                puts "#{the_pop.name} - #{the_pop.nickname}"
+                puts "#{the_pop.name}"
             elsif input == "list"
                 puts
                 list_cities

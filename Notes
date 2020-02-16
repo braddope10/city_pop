@@ -17,12 +17,12 @@ user types city-pop
 
 - Shows a list of 10 cities
 
-Here is a list of the largest US cities in terms of population in order:
-1. New York
-2. Los Angeles
-3. Chicago
-4. Houston
-5. Phoenix
+Here is a list of the largest cities in Nevada in terms of population in order:
+1. Las Vegas
+2. Henderson
+3. Reno
+4. North Las Vegas
+5. Sparks
 
 - Asks the user which one they would like to see the estimated population (input 1 through 10 or exit)
 
