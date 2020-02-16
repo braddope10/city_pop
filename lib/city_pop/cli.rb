@@ -10,21 +10,17 @@ class CityPop::CLI
     end
 
     def list_cities
-        #get city name
-        #@cities = []
-        #puts "1. Las Vegas"
-        #puts "2. Henderson"
-        #puts CityPop::Scraper..scrape_vegas
-        #binging.pry
 
-        CityPop::City.new(CityPop::Scraper.all)
-        
-        puts @current_city.name
-
-        binding.pry
+        CityPop::Scraper.all.each_with_index do |name, num|
+            puts "#{num+1}. #{name[:name]}"
+        end
         
     end
 
+    def current_city_info
+
+        puts "#{@current_city.name} - #{@current_city.population}"
+    end
 
     def menu
         input = nil
@@ -35,23 +31,23 @@ class CityPop::CLI
             # if user input == 1 scraper.get_pop(1)
             if input == "1"
                 @current_city = CityPop::City.new(CityPop::Scraper.scrape_vegas)
-                puts "#{@current_city.name} - #{@current_city.population}"
+                current_city_info
             
             elsif input == "2"
                 @current_city = CityPop::City.new(CityPop::Scraper.scrape_henderson)
-                puts "#{@current_city.name} - #{@current_city.population}"
+                current_city_info
 
             elsif input == "3"
                 @current_city = CityPop::City.new(CityPop::Scraper.scrape_reno)
-                puts "#{@current_city.name} - #{@current_city.population}"
+                current_city_info
 
             elsif input == "4"
                 @current_city = CityPop::City.new(CityPop::Scraper.scrape_north)
-                puts "#{@current_city.name} - #{@current_city.population}"
+                current_city_info
 
             elsif input == "5"
                 @current_city = CityPop::City.new(CityPop::Scraper.scrape_sparks)
-                puts "#{@current_city.name} - #{@current_city.population}"
+                current_city_info
 
             #binding.pry
             # @the_pop = @cities[input.to_i-1]

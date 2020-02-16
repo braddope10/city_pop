@@ -23,7 +23,7 @@ class CityPop::Scraper
 
         # binding.pry
         information
-        ######binding.pry
+        # binding.pry
       
     end
 
