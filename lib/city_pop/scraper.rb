@@ -34,15 +34,15 @@ class CityPop::Scraper
         
     end
 
-    def self.scrape_pop(num)
+    def self.scrape_vegas_pop  #(num)
         
         # binding.pry
-        pop = @doc.css("#artReg-table td").children[3].text 
+        vegas_pop = @doc.css("#artReg-table td").children[3].text 
         
         # pop.map do |num|
             binding.pry
             # @population = 
-        end
+        # end
 
     end
 
