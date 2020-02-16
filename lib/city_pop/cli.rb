@@ -15,21 +15,24 @@ class CityPop::CLI
             puts "#{num+1}. #{name[:name]}"
         end
         
+        puts "Select a city to see the estimated population by entering the number or to see the list again type 'list' or if you'd like to exit type 'exit':"
+       
     end
 
     def current_city_info
-
         puts "#{@current_city.name} - #{@current_city.population}"
     end
 
     def menu
+        
         input = nil
 
         while input != 'exit'
-            puts "Select a city to see the estimated population by entering the number or to see the list again type 'list' or if you'd like to exit type 'exit':"
-            input = gets.strip.downcase
-            # if user input == 1 scraper.get_pop(1)
-            if input == "1"
+
+              input = gets.strip.downcase
+            
+            if input == "1" 
+                # if #check by name and then if true then puts out current_city_info
                 @current_city = CityPop::City.new(CityPop::Scraper.scrape_vegas)
                 current_city_info
             
@@ -40,18 +43,15 @@ class CityPop::CLI
             elsif input == "3"
                 @current_city = CityPop::City.new(CityPop::Scraper.scrape_reno)
                 current_city_info
-
+                
             elsif input == "4"
                 @current_city = CityPop::City.new(CityPop::Scraper.scrape_north)
                 current_city_info
 
-            elsif input == "5"
+            elsif input == "5" 
                 @current_city = CityPop::City.new(CityPop::Scraper.scrape_sparks)
                 current_city_info
 
-            #binding.pry
-            # @the_pop = @cities[input.to_i-1]
-            # puts "#{@the_pop} - #{@population}"
             elsif input == "list"
                 puts
                 list_cities
@@ -60,7 +60,7 @@ class CityPop::CLI
             end
         end
     end
-
+    
     def goodbye
         puts "See you later alligator!"
     end

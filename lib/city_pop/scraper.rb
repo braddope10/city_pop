@@ -24,7 +24,6 @@ class CityPop::Scraper
         # binding.pry
         information
         # binding.pry
-      
     end
 
     # def self.scrape_names
