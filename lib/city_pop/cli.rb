@@ -11,12 +11,18 @@ class CityPop::CLI
 
     def list_cities
         #get city name
-        @cities = CityPop::Scraper.scrape_names.each.with_index do |city, i|
-            if i < 5
-                puts "#{i+1}. #{city}"
-            end
-        end
+        #@cities = []
+        #puts "1. Las Vegas"
+        #puts "2. Henderson"
+        #puts CityPop::Scraper..scrape_vegas
+        #binging.pry
 
+        CityPop::City.new(CityPop::Scraper.all)
+        
+        puts @current_city.name
+
+        binding.pry
+        
     end
 
 
@@ -26,14 +32,30 @@ class CityPop::CLI
         while input != 'exit'
             puts "Select a city to see the estimated population by entering the number or to see the list again type 'list' or if you'd like to exit type 'exit':"
             input = gets.strip.downcase
+            # if user input == 1 scraper.get_pop(1)
+            if input == "1"
+                @current_city = CityPop::City.new(CityPop::Scraper.scrape_vegas)
+                puts "#{@current_city.name} - #{@current_city.population}"
+            
+            elsif input == "2"
+                @current_city = CityPop::City.new(CityPop::Scraper.scrape_henderson)
+                puts "#{@current_city.name} - #{@current_city.population}"
 
-            if input.to_i > 0 && input.to_i < 6
-                # if user input == 1 scraper.get_pop(1)
-                @current_city = CityPop::City.new(name, population)
-                
+            elsif input == "3"
+                @current_city = CityPop::City.new(CityPop::Scraper.scrape_reno)
+                puts "#{@current_city.name} - #{@current_city.population}"
 
-                # @the_pop = @cities[input.to_i-1]
-                # puts "#{@the_pop} - #{@population}"
+            elsif input == "4"
+                @current_city = CityPop::City.new(CityPop::Scraper.scrape_north)
+                puts "#{@current_city.name} - #{@current_city.population}"
+
+            elsif input == "5"
+                @current_city = CityPop::City.new(CityPop::Scraper.scrape_sparks)
+                puts "#{@current_city.name} - #{@current_city.population}"
+
+            #binding.pry
+            # @the_pop = @cities[input.to_i-1]
+            # puts "#{@the_pop} - #{@population}"
             elsif input == "list"
                 puts
                 list_cities

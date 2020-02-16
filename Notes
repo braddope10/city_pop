@@ -28,6 +28,14 @@ Here is a list of the largest cities in Nevada in terms of population in order:
 
 Select a city to see the estimated population by entering the number or exit.
 
+
+
+
+
+
+
+
+
 - Asks the user if they would like more info on the city. (Y/N) if no then send them back to home
 
 Would you like more info on this city? (Y/N)
