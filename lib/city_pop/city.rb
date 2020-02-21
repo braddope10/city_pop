@@ -4,9 +4,14 @@ class CityPop::City
 
     @@all = []
 
-    def initialize(attributes)
-        attributes.each {|key, value| self.send(("#{key}="), value)}  
+    # Assigning hash values to an object
+    def initialize(attributes) #
+        attributes.each {|key, value| self.send(("#{key}="), value)}
+        #                name: cityname           name= cityname
+        #          population: num          population= num
+        
         save
+        #or @@all << self
     end
 
     def self.all

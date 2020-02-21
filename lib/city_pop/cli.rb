@@ -9,17 +9,17 @@ class CityPop::CLI
         goodbye
     end
 
-    def list_cities
-
+    def list_cities # list cities 
         CityPop::Scraper.all.each_with_index do |name, num|
             puts "#{num+1}. #{name[:name]}"
+            #       0 + 1      "Las Vegas"
         end
-        
+
         puts "Select a city to see the estimated population by entering the number or to see the list again type 'list' or if you'd like to exit type 'exit':"
-       
+
     end
 
-    def current_city_info
+    def current_city_info # DRY
         puts "#{@current_city.name} - #{@current_city.population}"
     end
 
@@ -27,12 +27,12 @@ class CityPop::CLI
         
         input = nil
 
+        # If the input equals 'exit' you will not enter the loop
         while input != 'exit'
 
               input = gets.strip.downcase
             
             if input == "1" 
-                # if #check by name and then if true then puts out current_city_info
                 @current_city = CityPop::City.new(CityPop::Scraper.scrape_vegas)
                 current_city_info
             

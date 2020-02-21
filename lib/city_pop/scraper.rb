@@ -1,7 +1,8 @@
 class CityPop::Scraper
 
-    attr_accessor :name, :population, :paragraph, :url
-
+    attr_accessor :name, :population
+    
+    # DRY
     @doc = Nokogiri::HTML(open("https://www.worldatlas.com/articles/the-10-biggest-cities-in-nevada.html"))
 
     def self.all
@@ -11,8 +12,7 @@ class CityPop::Scraper
     end
 
     def self.scrape_info
-        #Go to URL, find the value
-        #Extract value
+        #Go to URL and send all the hashes(values) through
         information = []
 
         information << self.scrape_vegas
@@ -21,26 +21,15 @@ class CityPop::Scraper
         information << self.scrape_north
         information << self.scrape_sparks
 
-        # binding.pry
         information
-        # binding.pry
+        
     end
 
-    # def self.scrape_names
-    #     # citynames = @doc.css("h3")
-    #     citynames = @doc.css("#artReg-table td").children[1]
-    #     citynames.map do |name|
-    #     # binding.pry
-    #         @name = name.text[3..17]
-    #         # binding.pry
-    #     end
-    #     binding.pry
-    # end
-
-    def self.scrape_vegas  #(num)
+    def self.scrape_vegas # Create a hash with the known location of city name and population using Nokogiri
 
         {name:  @doc.css("#artReg-table td").children[1].text,
         population: @doc.css("#artReg-table td").children[3].text}
+
     end
 
     def self.scrape_henderson
@@ -70,7 +59,6 @@ class CityPop::Scraper
         population: @doc.css("#artReg-table td").children[35].text}
 
     end
-
 
 end
 
