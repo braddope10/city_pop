@@ -1,8 +1,8 @@
 # CityPop
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/city_pop`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome! In this gem you will be able to interact with a CLI and see the 5 most populated cities in Nevada. To run this gem put './bin/city-pop' in your terminal after installing the gem to see the results scraped from https://www.worldatlas.com/articles/the-10-biggest-cities-in-nevada.html using Nokogiri.
 
-TODO: Delete this and the text above, and describe your gem
+Below you will see the installation process.
 
 ## Installation
 
