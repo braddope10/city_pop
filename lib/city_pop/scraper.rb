@@ -5,24 +5,15 @@ class CityPop::Scraper
     # DRY
     @doc = Nokogiri::HTML(open("https://www.worldatlas.com/articles/the-10-biggest-cities-in-nevada.html"))
 
-    def self.all
-        # I should return instances of cities
-        # Scrape and return values
-        self.scrape_info
-    end
-
     def self.scrape_info
         #Go to URL and send all the hashes(values) through
-        information = []
-
-        information << self.scrape_vegas
-        information << self.scrape_henderson
-        information << self.scrape_reno
-        information << self.scrape_north
-        information << self.scrape_sparks
-
-        information
         
+        CityPop::City.new(self.scrape_vegas)
+        CityPop::City.new(self.scrape_henderson)
+        CityPop::City.new(self.scrape_reno)
+        CityPop::City.new(self.scrape_north)
+        CityPop::City.new(self.scrape_sparks)
+
     end
 
     def self.scrape_vegas # Create a hash with the known location of city name and population using Nokogiri
