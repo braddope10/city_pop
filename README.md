@@ -1,6 +1,6 @@
 # CityPop
 
-Welcome! In this gem you will be able to interact with a CLI and see the 5 most populated cities in Nevada. To run this gem put './bin/city-pop' in your terminal after installing the gem to see the results scraped from https://www.worldatlas.com/articles/the-10-biggest-cities-in-nevada.html using Nokogiri.
+Welcome! In this gem you will be able to interact with a CLI and see the 5 most populated cities in Nevada. To run this gem put './bin/city-pop' in your terminal after cloning the repository to see the results scraped from https://www.worldatlas.com/articles/the-10-biggest-cities-in-nevada.html using Nokogiri.
 
 Below you will see the installation process.
 
@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To run the application type './bin/city-pop' in your terminal after cloning the repository.
 
 ## Development
 
