@@ -27,7 +27,7 @@ class CityPop::CLI
     end
 
     def menu
-        
+        self
         input = nil
 
         # If the input equals 'exit' you will not enter the loop
@@ -35,24 +35,8 @@ class CityPop::CLI
 
               input = gets.strip.downcase
             
-            if input == "1" # Call on the all method in City class, retrieve the correct element using brackets, and set it equal to an instance variable
-                @current_city = CityPop::City.all[0]
-                current_city_info
-            
-            elsif input == "2"
-                @current_city = CityPop::City.all[1]
-                current_city_info
-
-            elsif input == "3"
-                @current_city = CityPop::City.all[2]
-                current_city_info
-                
-            elsif input == "4"
-                @current_city = CityPop::City.all[3]
-                current_city_info
-
-            elsif input == "5" 
-                @current_city = CityPop::City.all[4]
+            if (1..CityPop::City.all.size).include?(input.to_i) # Call on the all method in City class, retrieve the correct element using brackets, and set it equal to an instance variable
+                @current_city = CityPop::City.all[input.to_i-1]
                 current_city_info
 
             elsif input == "list"
@@ -64,6 +48,45 @@ class CityPop::CLI
             end
         end
     end
+
+    # def menu
+    #     self
+    #     input = nil
+
+    #     # If the input equals 'exit' you will not enter the loop
+    #     while input != 'exit'
+
+    #           input = gets.strip.downcase
+            
+    #         if input == "1" # Call on the all method in City class, retrieve the correct element using brackets, and set it equal to an instance variable
+    #             @current_city = CityPop::City.all[0]
+    #             current_city_info
+            
+    #         elsif input == "2"
+    #             @current_city = CityPop::City.all[1]
+    #             current_city_info
+
+    #         elsif input == "3"
+    #             @current_city = CityPop::City.all[2]
+    #             current_city_info
+                
+    #         elsif input == "4"
+    #             @current_city = CityPop::City.all[3]
+    #             current_city_info
+
+    #         elsif input == "5" 
+    #             @current_city = CityPop::City.all[4]
+    #             current_city_info
+
+    #         elsif input == "list"
+    #             list_cities
+
+    #         else
+    #             puts "You look lost. Type 'list' to review your options:"
+
+    #         end
+    #     end
+    # end
     
     def goodbye
         puts "See you later alligator!"
