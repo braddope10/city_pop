@@ -24,6 +24,8 @@ Or install it yourself as:
 
 To run the application type './bin/city-pop' in your terminal after cloning the repository.
 
+Further instructions will be given in the Command Line Interface
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
